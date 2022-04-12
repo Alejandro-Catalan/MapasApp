@@ -1,0 +1,35 @@
+import { Component, OnInit } from '@angular/core';
+import * as  mapboxgl from 'mapbox-gl'; //se lee: 'toda esta libreria se va a conocer como mapboxgl'
+
+
+@Component({
+  selector   : 'app-full-screen',
+  templateUrl: './full-screen.component.html', 
+  styles     : [ 
+    ` #mapa{
+
+      height: 100%;
+      width : 100%;
+    }`
+  ]
+})
+export class FullScreenComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit(): void {
+
+
+    var map = new mapboxgl.Map({
+    container: 'mapa',
+    style    : 'mapbox://styles/mapbox/streets-v11',
+    center   : [ -70.54584711897247, -33.42211358157754 ],
+    zoom     : 17
+    });
+
+
+  }
+
+
+
+}
